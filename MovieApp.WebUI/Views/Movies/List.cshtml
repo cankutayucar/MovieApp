@@ -3,13 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <style>
-        .film{
-            border:1px solid #000;
-            margin-bottom: 10px;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
     <h1>Film Listesi</h1>
@@ -18,6 +12,7 @@
         @foreach (var item in Model)
         {
             <div class="film">
+                <img src="/img/@item.ImageUrl" style="width:100px;" alt="@item.Title" />
                 <p>@item.Title</p>
                 <p>@item.Description</p>
                 <p>@item.Director</p>

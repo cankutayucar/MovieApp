@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\html\" />
     <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>
