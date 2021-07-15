@@ -37,3 +37,5 @@ C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Vi
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\List.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
