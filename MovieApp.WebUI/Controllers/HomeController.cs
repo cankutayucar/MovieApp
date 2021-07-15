@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieApp.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,20 @@ namespace MovieApp.WebUI.Controllers
             string filmYonetmen = "Film Yönetmen";
             string[] oyuncular = { "oyuncu 1", "oyuncu 2", "oyuncu 1", "oyuncu 2" };
 
-            ViewBag.FilmBasligi = filmBasligi;
-            ViewBag.FilmAciklama = filmAciklama;
-            ViewBag.FilmYonetmen = filmYonetmen;
-            ViewBag.Oyuncular = oyuncular;
+            var m = new Movie()
+            {
+                Title = filmBasligi,
+                Description = filmAciklama,
+                Director = filmYonetmen,
+                Players = oyuncular
+            };
 
-            return View();
+            //ViewBag.FilmBasligi = filmBasligi;
+            //ViewBag.FilmAciklama = filmAciklama;
+            //ViewBag.FilmYonetmen = filmYonetmen;
+            //ViewBag.Oyuncular = oyuncular;
+
+            return View(m);
         }
 
         public IActionResult About()
