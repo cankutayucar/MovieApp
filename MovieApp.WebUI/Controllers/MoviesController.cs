@@ -8,19 +8,19 @@ namespace MovieApp.WebUI.Controllers
 {
     public class MoviesController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "movies index";
+            return View();
         }
 
-        public string List()
+        public IActionResult List()
         {
-            return "movies list";
+            return View();
         }
         
-        public string Details()
+        public IActionResult Details()
         {
-            return "movies details";
+            return View();
         }
     }
 }

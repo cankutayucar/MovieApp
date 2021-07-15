@@ -8,14 +8,24 @@ namespace MovieApp.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "home index";
+            string filmBasligi = "Film Başlığı";
+            string filmAciklama = "Film Açıklama";
+            string filmYonetmen = "Film Yönetmen";
+            string[] oyuncular = { "oyuncu 1", "oyuncu 2", "oyuncu 1", "oyuncu 2" };
+
+            ViewBag.FilmBasligi = filmBasligi;
+            ViewBag.FilmAciklama = filmAciklama;
+            ViewBag.FilmYonetmen = filmYonetmen;
+            ViewBag.Oyuncular = oyuncular;
+
+            return View();
         }
 
-        public string About()
+        public IActionResult About()
         {
-            return "home about";
+            return View();
         }
     }
 }
