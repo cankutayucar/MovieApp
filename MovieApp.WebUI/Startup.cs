@@ -33,25 +33,30 @@ namespace MovieApp.WebUI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "home",
-                    pattern: "",
-                    defaults: new { controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute(
-                    name: "homeAbout",
-                    pattern: "about",
-                    defaults: new { controller = "Home", action = "About" });
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                endpoints.MapControllerRoute(
-                    name: "moviesList",
-                    pattern: "movies/list",
-                    defaults: new { controller = "Movies", action = "List" });
+                //endpoints.MapControllerRoute(
+                //    name: "home",
+                //    pattern: "",
+                //    defaults: new { controller = "Home", action = "Index" });
 
-                endpoints.MapControllerRoute(
-                    name: "MoviesDetails",
-                    pattern: "movies/details",
-                    defaults: new { controller = "Movies", action = "Details" });
+                //endpoints.MapControllerRoute(
+                //    name: "homeAbout",
+                //    pattern: "about",
+                //    defaults: new { controller = "Home", action = "About" });
+
+                //endpoints.MapControllerRoute(
+                //    name: "moviesList",
+                //    pattern: "movies/list",
+                //    defaults: new { controller = "Movies", action = "List" });
+
+                //endpoints.MapControllerRoute(
+                //    name: "MoviesDetails",
+                //    pattern: "movies/details",
+                //    defaults: new { controller = "Movies", action = "Details" });
             });
         }
     }

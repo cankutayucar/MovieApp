@@ -8,6 +8,11 @@ namespace MovieApp.WebUI.Controllers
 {
     public class MoviesController : Controller
     {
+        public string Index()
+        {
+            return "movies index";
+        }
+
         public string List()
         {
             return "movies list";
