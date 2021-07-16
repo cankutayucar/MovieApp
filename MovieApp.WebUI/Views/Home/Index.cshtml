@@ -1,6 +1,11 @@
 ﻿
 @model Movie
 
+@section jumbotron{
+    @await Html.PartialAsync("_header")
+}
+
+
 
 <h1>Film Listesi</h1>
 <div id="filmler">
