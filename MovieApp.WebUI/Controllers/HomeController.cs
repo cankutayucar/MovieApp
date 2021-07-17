@@ -21,7 +21,8 @@ namespace MovieApp.WebUI.Controllers
                 Title = filmBasligi,
                 Description = filmAciklama,
                 Director = filmYonetmen,
-                Players = oyuncular
+                Players = oyuncular,
+                ImageUrl = "ahmet1.jpg"
             };
 
             //ViewBag.FilmBasligi = filmBasligi;
