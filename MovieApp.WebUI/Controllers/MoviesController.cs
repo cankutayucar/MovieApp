@@ -28,7 +28,26 @@ namespace MovieApp.WebUI.Controllers
 
                 new Movie{Title="film 5",Description="açıklama 5",Director="yönetmen 5",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet2.jpg"},
             };
-            return View(filmListesi);
+
+            var turler = new List<Genre>()
+            {
+                new Genre(){Name="Tur 1"},
+                new Genre(){Name="Tur 2"},
+                new Genre(){Name="Tur 3"},
+                new Genre(){Name="Tur 4"},
+                new Genre(){Name="Tur 5"},
+                new Genre(){Name="Tur 6"},
+                new Genre(){Name="Tur 7"},
+                new Genre(){Name="Tur 8"}
+            };
+
+            var model = new MovieGenreViewModel()
+            {
+                Genres = turler,
+                Movies = filmListesi
+            };
+
+            return View(model);
         }
 
         public IActionResult Details()
