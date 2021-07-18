@@ -13,5 +13,6 @@ namespace MovieApp.WebUI.Models
         public string Director { get; set; }
         public string[] Players { get; set; }
         public string ImageUrl { get; set; }
+        public int GenreID { get; set; }
     }
 }

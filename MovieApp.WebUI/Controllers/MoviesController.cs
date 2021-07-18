@@ -15,12 +15,22 @@ namespace MovieApp.WebUI.Controllers
             return View();
         }
 
-        public IActionResult List()
+        public IActionResult List(int? id)
         {
 
+            var controller = RouteData.Values["controller"];
+            var action = RouteData.Values["action"];
+            var genreid = RouteData.Values["id"];
+            
+
+            var movies = MovieRepository.Movies;
+            if (id != null)
+            {
+                movies = movies.Where(i => i.GenreID == id).ToList();
+            }
             var model = new MovieGenreViewModel()
             {
-                Movies = MovieRepository.Movies
+                Movies = movies
             };
 
             return View(model);
