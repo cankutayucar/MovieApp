@@ -10,24 +10,32 @@ namespace MovieApp.WebUI.Controllers
 {
     public class MoviesController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult List(int? id)
+        [HttpGet]
+        public IActionResult List(int? id, string q)
         {
 
             var controller = RouteData.Values["controller"];
             var action = RouteData.Values["action"];
             var genreid = RouteData.Values["id"];
-            
+            var kelime = HttpContext.Request.Query["q"].ToString();
 
             var movies = MovieRepository.Movies;
             if (id != null)
             {
                 movies = movies.Where(i => i.GenreID == id).ToList();
             }
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                movies = movies.Where(i => i.Title.ToLower().Contains(q.ToLower()) || i.Description.ToLower().Contains(q.ToLower())).ToList();
+            }
+
             var model = new MovieGenreViewModel()
             {
                 Movies = movies
@@ -36,9 +44,34 @@ namespace MovieApp.WebUI.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Details(int id)
         {
             return View(MovieRepository.GetById(id));
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Create(Movie movie)
+        {
+            var m = new Movie()
+            {
+                Title = movie.Title,
+                Description = movie.Description,
+                Director = movie.Director,
+                ImageUrl = movie.ImageUrl,
+                GenreID = movie.GenreID
+            };
+            MovieRepository.Add(m);
+            return RedirectToAction("List", "Movies");
+        }
+
     }
 }
