@@ -1,5 +1,5 @@
 ﻿
-@model Movie
+@model HomePageViewModel
 
 @section jumbotron{
     @await Html.PartialAsync("_header")
@@ -24,7 +24,9 @@
             </p>
         </div>*@
 
-
-    @await Html.PartialAsync("_movie", Model)
+    @foreach (var item in Model.PopulerMovies)
+    {
+        @await Html.PartialAsync("_movie", item)
+    }
 
 </div>
