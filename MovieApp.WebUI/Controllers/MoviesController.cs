@@ -26,9 +26,9 @@ namespace MovieApp.WebUI.Controllers
             return View(model);
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            return View(MovieRepository.GetById(id));
         }
     }
 }
