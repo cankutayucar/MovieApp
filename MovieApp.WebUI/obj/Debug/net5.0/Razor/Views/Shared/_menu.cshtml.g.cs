@@ -20,7 +20,7 @@ using MovieApp.WebUI.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"10a834077445e3f15a3dea311c1cfdb8c4858ddf", @"/Views/Shared/_menu.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ef66424ecc17493b27d40a08f61b957874b6a5d4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e0b1157f7f4c326ad95f8287b32ac2612e3c94d1", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__menu : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Genre>>
     {
         #pragma warning disable 1998
