@@ -47,5 +47,20 @@ namespace MovieApp.WebUI.Data
             return _movies.FirstOrDefault(i => i.MovieId == id);
         }
 
+        public static void Edit(Movie m)
+        {
+            foreach (var item in _movies)
+            {
+                if (item.MovieId == m.MovieId)
+                {
+                    item.Title = m.Title;
+                    item.Description = m.Description;
+                    item.Director = m.Director;
+                    item.ImageUrl = m.ImageUrl;
+                    item.GenreID = m.GenreID;
+                    break;
+                }
+            }
+        }
     }
 }

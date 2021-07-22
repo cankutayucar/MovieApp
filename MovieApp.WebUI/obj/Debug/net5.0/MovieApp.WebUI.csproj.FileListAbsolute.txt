@@ -45,3 +45,4 @@ C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Vi
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_movie.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\Components\Genres\Default.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\Create.cshtml.g.cs
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
