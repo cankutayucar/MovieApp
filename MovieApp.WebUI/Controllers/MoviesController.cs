@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MovieApp.WebUI.Data;
 using MovieApp.WebUI.Models;
 using System;
@@ -53,6 +54,7 @@ namespace MovieApp.WebUI.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
             return View();
         }
 
@@ -80,7 +82,7 @@ namespace MovieApp.WebUI.Controllers
         public IActionResult Edit(int id)
         {
             var movies = MovieRepository.GetById(id);
-
+            ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
             return View(movies);
         }
 
