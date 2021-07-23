@@ -74,6 +74,7 @@ namespace MovieApp.WebUI.Controllers
                     GenreID = movie.GenreID
                 };
                 MovieRepository.Add(m);
+                TempData["Message"] = $"{m.Title} isimli film eklendi";
                 return RedirectToAction("List", "Movies");
             }
             ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
@@ -107,9 +108,10 @@ namespace MovieApp.WebUI.Controllers
 
 
 
-        public IActionResult Delete(int MovieId)
+        public IActionResult Delete(int MovieId, string Title)
         {
             MovieRepository.Delete(MovieId);
+            TempData["Message"] = $"{Title} isimli film silindi";
             return RedirectToAction("List");
         }
     }

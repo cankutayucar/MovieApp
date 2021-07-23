@@ -9,6 +9,9 @@
     @RenderSection("stylesheat", false)
 </head>
 <body>
+    @RenderSection("message", false)
+
+
     @await Html.PartialAsync("_navbar")
     @RenderSection("jumbotron", false)
     <div class="container mt-3">
