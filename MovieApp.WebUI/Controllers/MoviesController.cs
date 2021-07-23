@@ -104,5 +104,13 @@ namespace MovieApp.WebUI.Controllers
             ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
             return View(movie);
         }
+
+
+
+        public IActionResult Delete(int MovieId)
+        {
+            MovieRepository.Delete(MovieId);
+            return RedirectToAction("List");
+        }
     }
 }
