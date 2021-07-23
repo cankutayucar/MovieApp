@@ -63,16 +63,22 @@ namespace MovieApp.WebUI.Controllers
         [HttpPost]
         public IActionResult Create(Movie movie)
         {
-            var m = new Movie()
+            if (ModelState.IsValid)
             {
-                Title = movie.Title,
-                Description = movie.Description,
-                Director = movie.Director,
-                ImageUrl = movie.ImageUrl,
-                GenreID = movie.GenreID
-            };
-            MovieRepository.Add(m);
-            return RedirectToAction("List", "Movies");
+                var m = new Movie()
+                {
+                    Title = movie.Title,
+                    Description = movie.Description,
+                    Director = movie.Director,
+                    ImageUrl = movie.ImageUrl,
+                    GenreID = movie.GenreID
+                };
+                MovieRepository.Add(m);
+                return RedirectToAction("List", "Movies");
+            }
+            ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
+            return View();
+
         }
 
 
@@ -90,8 +96,13 @@ namespace MovieApp.WebUI.Controllers
         [HttpPost]
         public IActionResult Edit(Movie movie)
         {
-            MovieRepository.Edit(movie);
-            return RedirectToAction("Details", "Movies", new { @id = movie.MovieId });
+            if (ModelState.IsValid)
+            {
+                MovieRepository.Edit(movie);
+                return RedirectToAction("Details", "Movies", new { @id = movie.MovieId });
+            }
+            ViewBag.Turler = new SelectList(GenreRepository.Genres, "GenreId", "Name");
+            return View(movie);
         }
     }
 }
