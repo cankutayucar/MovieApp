@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieApp.WebUI.Data;
+using MovieApp.WebUI.Entity;
 using MovieApp.WebUI.Models;
 using System;
 using System.Collections.Generic;

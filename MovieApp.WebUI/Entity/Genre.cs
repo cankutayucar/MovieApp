@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieApp.WebUI.Models
+namespace MovieApp.WebUI.Entity
 {
     public class Genre
     {

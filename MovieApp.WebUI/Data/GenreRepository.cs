@@ -1,4 +1,5 @@
-﻿using MovieApp.WebUI.Models;
+﻿using MovieApp.WebUI.Entity;
+using MovieApp.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

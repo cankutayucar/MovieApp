@@ -47,3 +47,13 @@ C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Vi
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\Create.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
 C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_message.cshtml.g.cs
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.Data.Sqlite.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\SQLitePCLRaw.core.dll
+C:\Users\CAN\Desktop\MovieMVC5\MovieApp\MovieApp.WebUI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
