@@ -10,18 +10,12 @@ namespace MovieApp.WebUI.Entity
     {
         public int? MovieId { get; set; }
 
-        [Required(ErrorMessage = "film başlığı eklemelisiniz")]
-        [StringLength(50, MinimumLength = 5, ErrorMessage = "film başlığı 5-50 karakter aralığında olmalıdır")]
+        [Required]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "film açıklaması eklemelisiniz")]
+        [MaxLength(500)]
         public string Description { get; set; }
-
-        [Required]
         public string Director { get; set; }
-        public string[] Players { get; set; }
-
-        [Required]
         public string ImageUrl { get; set; }
 
         [Required]

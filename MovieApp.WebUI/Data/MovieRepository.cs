@@ -15,15 +15,15 @@ namespace MovieApp.WebUI.Data
         {
             _movies = new List<Movie>()
             {
-                new Movie{Title="film 1",Description="açıklama 1",Director="yönetmen 1",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet1.jpg",MovieId=1,GenreID=1},
+                new Movie{Title="film 1",Description="açıklama 1",Director="yönetmen 1",ImageUrl="ahmet1.jpg",MovieId=1,GenreID=1},
 
-                new Movie{Title="film 2",Description="açıklama 2",Director="yönetmen 2",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet2.jpg",MovieId=2,GenreID=2},
+                new Movie{Title="film 2",Description="açıklama 2",Director="yönetmen 2",ImageUrl="ahmet2.jpg",MovieId=2,GenreID=2},
 
-                new Movie{Title="film 3",Description="açıklama 3",Director="yönetmen 3",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet3.jpg",MovieId=3,GenreID=3},
+                new Movie{Title="film 3",Description="açıklama 3",Director="yönetmen 3",ImageUrl="ahmet3.jpg",MovieId=3,GenreID=3},
 
-                new Movie{Title="film 4",Description="açıklama 4",Director="yönetmen 4",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet1.jpg",MovieId=4,GenreID=4},
+                new Movie{Title="film 4",Description="açıklama 4",Director="yönetmen 4",ImageUrl="ahmet1.jpg",MovieId=4,GenreID=4},
 
-                new Movie{Title="film 5",Description="açıklama 5",Director="yönetmen 5",Players=new string[]{"oyuncu 1","oyuncu 2", "oyuncu 3","oyuncu 4","oyuncu 5","oyuncu 6","oyuncu 7"},ImageUrl="ahmet2.jpg",MovieId=5,GenreID=5}
+                new Movie{Title="film 5",Description="açıklama 5",Director="yönetmen 5",ImageUrl="ahmet2.jpg",MovieId=5,GenreID=5}
             };
         }
 
