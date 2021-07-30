@@ -17,6 +17,7 @@ namespace MovieApp.WebUI.Controllers
         {
             _context = context;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -113,6 +114,7 @@ namespace MovieApp.WebUI.Controllers
             {
                 //MovieRepository.Edit(movie);
                 _context.Movies.Update(movie);
+                _context.SaveChanges();
                 return RedirectToAction("Details", "Movies", new { @id = movie.MovieId });
             }
             ViewBag.Turler = new SelectList(_context.Genres.ToList(), "GenreId", "Name");
@@ -126,6 +128,7 @@ namespace MovieApp.WebUI.Controllers
             //MovieRepository.Delete(MovieId);
             var entity = _context.Movies.Find(MovieId);
             _context.Movies.Remove(entity);
+            _context.SaveChanges();
             TempData["Message"] = $"{Title} isimli film silindi";
             return RedirectToAction("List");
         }

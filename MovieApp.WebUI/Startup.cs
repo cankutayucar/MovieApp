@@ -34,6 +34,7 @@ namespace MovieApp.WebUI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                DataSeeding.Seed(app);
             }
 
             app.UseStaticFiles();

@@ -11,11 +11,17 @@ namespace MovieApp.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly MovieContext _context;
+        public HomeController(MovieContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             var model = new HomePageViewModel
             {
-                PopulerMovies = MovieRepository.Movies
+                PopulerMovies = _context.Movies.ToList()
             };
 
             //string filmBasligi = "Film Başlığı";
@@ -42,17 +48,7 @@ namespace MovieApp.WebUI.Controllers
 
         public IActionResult About()
         {
-            var turler = new List<Genre>()
-            {
-                new Genre(){Name="Tur 1"},
-                new Genre(){Name="Tur 2"},
-                new Genre(){Name="Tur 3"},
-                new Genre(){Name="Tur 4"},
-                new Genre(){Name="Tur 5"},
-                new Genre(){Name="Tur 6"},
-                new Genre(){Name="Tur 7"},
-                new Genre(){Name="Tur 8"}
-            };
+            var turler = _context.Genres.ToList();
 
             return View(turler);
         }
