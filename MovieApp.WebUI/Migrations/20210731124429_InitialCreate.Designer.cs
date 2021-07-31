@@ -9,7 +9,7 @@ using MovieApp.WebUI.Data;
 namespace MovieApp.WebUI.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20210728085558_InitialCreate")]
+    [Migration("20210731124429_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,6 +17,26 @@ namespace MovieApp.WebUI.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.8");
+
+            modelBuilder.Entity("MovieApp.WebUI.Entity.Director", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Biography")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Directors");
+                });
 
             modelBuilder.Entity("MovieApp.WebUI.Entity.Genre", b =>
                 {
@@ -41,9 +61,6 @@ namespace MovieApp.WebUI.Migrations
 
                     b.Property<string>("Description")
                         .HasMaxLength(500)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Director")
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("GenreID")
