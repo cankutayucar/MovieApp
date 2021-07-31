@@ -67,7 +67,7 @@ namespace MovieApp.WebUI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int?>("GenreID")
+                    b.Property<int?>("GenreId")
                         .IsRequired()
                         .HasColumnType("int");
 
@@ -80,7 +80,25 @@ namespace MovieApp.WebUI.Migrations
 
                     b.HasKey("MovieId");
 
+                    b.HasIndex("GenreId");
+
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("MovieApp.WebUI.Entity.Movie", b =>
+                {
+                    b.HasOne("MovieApp.WebUI.Entity.Genre", "Genre")
+                        .WithMany("Movies")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("MovieApp.WebUI.Entity.Genre", b =>
+                {
+                    b.Navigation("Movies");
                 });
 #pragma warning restore 612, 618
         }

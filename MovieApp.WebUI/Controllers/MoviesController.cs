@@ -38,7 +38,7 @@ namespace MovieApp.WebUI.Controllers
 
             if (id != null)
             {
-                movies = movies.Where(i => i.GenreID == id);
+                movies = movies.Where(i => i.GenreId == id);
             }
 
             if (!string.IsNullOrEmpty(q))

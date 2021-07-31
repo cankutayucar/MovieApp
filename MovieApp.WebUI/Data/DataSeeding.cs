@@ -20,31 +20,7 @@ namespace MovieApp.WebUI.Data
             context.Database.Migrate();
 
 
-
-
-            if (context.Database.GetPendingMigrations().Count() == 0)
-            {
-                if (context.Movies.Count() == 0)
-                {
-                    context.Movies.AddRange(
-                        new List<Movie>()
-                {
-                    new Movie{Title="film 1",Description="açıklama 1",ImageUrl="ahmet1.jpg",GenreID=1},
-
-                    new Movie{Title="film 2",Description="açıklama 2",ImageUrl="ahmet2.jpg",GenreID=2},
-
-                    new Movie{Title="film 3",Description="açıklama 3",ImageUrl="ahmet3.jpg",GenreID=3},
-
-                    new Movie{Title="film 4",Description="açıklama 4",ImageUrl="ahmet1.jpg",GenreID=4},
-
-                    new Movie{Title="film 5",Description="açıklama 5",ImageUrl="ahmet2.jpg",GenreID=5}
-                }
-                        );
-                }
-                if (context.Genres.Count() == 0)
-                {
-                    context.Genres.AddRange(
-                        new List<Genre>()
+            var genres = new List<Genre>()
             {
                 new Genre(){Name="Tur 1"},
                 new Genre(){Name="Tur 2"},
@@ -54,9 +30,30 @@ namespace MovieApp.WebUI.Data
                 new Genre(){Name="Tur 6"},
                 new Genre(){Name="Tur 7"},
                 new Genre(){Name="Tur 8"}
-            });
-                }
+            };
+            var movies = new List<Movie>()
+                {
+                    new Movie{Title="film 1",Description="açıklama 1",ImageUrl="ahmet1.jpg",GenreId=genres[0].GenreId,Genre=genres[0]},
 
+                    new Movie{Title="film 2",Description="açıklama 2",ImageUrl="ahmet2.jpg",GenreId=genres[1].GenreId,Genre=genres[1]},
+
+                    new Movie{Title="film 3",Description="açıklama 3",ImageUrl="ahmet3.jpg",GenreId=genres[2].GenreId,Genre=genres[2]},
+
+                    new Movie{Title="film 4",Description="açıklama 4",ImageUrl="ahmet1.jpg",GenreId=genres[3].GenreId,Genre=genres[3]},
+
+                    new Movie{Title="film 5",Description="açıklama 5",ImageUrl="ahmet2.jpg",GenreId=genres[4].GenreId,Genre=genres[4]}
+                };
+
+            if (context.Database.GetPendingMigrations().Count() == 0)
+            {
+                if (context.Genres.Count() == 0)
+                {
+                    context.Genres.AddRange(genres);
+                }
+                if (context.Movies.Count() == 0)
+                {
+                    context.Movies.AddRange(movies);
+                }
                 context.SaveChanges();
             }
         }
