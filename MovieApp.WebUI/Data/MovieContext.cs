@@ -25,5 +25,16 @@ namespace MovieApp.WebUI.Data
         public DbSet<Crew> Crews { get; set; }
         public DbSet<Cast> Casts { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Movie>().Property(i => i.Title).IsRequired();
+            modelBuilder.Entity<Movie>().Property(i => i.Title).HasMaxLength(500);
+
+
+            modelBuilder.Entity<Genre>().Property(i => i.Name).IsRequired();
+            modelBuilder.Entity<Genre>().Property(i => i.Name).HasMaxLength(50);
+        }
+
+
     }
 }

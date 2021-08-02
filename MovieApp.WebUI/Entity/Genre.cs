@@ -9,10 +9,7 @@ namespace MovieApp.WebUI.Entity
     public class Genre
     {
         public int GenreId { get; set; }
-        
-        [Required]
         public string Name { get; set; }
-
         public virtual List<Movie> Movies { get; set; }
     }
 }
