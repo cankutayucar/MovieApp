@@ -33,15 +33,30 @@ namespace MovieApp.WebUI.Data
             };
             var movies = new List<Movie>()
                 {
-                    new Movie{Title="film 1",Description="açıklama 1",ImageUrl="ahmet1.jpg",GenreId=genres[0].GenreId,Genre=genres[0]},
+                    new Movie{Title="film 1",Description="açıklama 1",ImageUrl="ahmet1.jpg",Genres = new List<Genre>()
+                    {
+                        genres[0], new Genre(){Name="Yeni Tür 1"},genres[1]
+                    } },
 
-                    new Movie{Title="film 2",Description="açıklama 2",ImageUrl="ahmet2.jpg",GenreId=genres[1].GenreId,Genre=genres[1]},
+                    new Movie{Title="film 2",Description="açıklama 2",ImageUrl="ahmet2.jpg",Genres = new List<Genre>()
+                    {
+                        genres[1], new Genre(){Name="Yeni Tür 2"},genres[2]
+                    } },
 
-                    new Movie{Title="film 3",Description="açıklama 3",ImageUrl="ahmet3.jpg",GenreId=genres[2].GenreId,Genre=genres[2]},
+                    new Movie{Title="film 3",Description="açıklama 3",ImageUrl="ahmet3.jpg",Genres = new List<Genre>()
+                    {
+                        genres[0], new Genre(){Name="Yeni Tür 3"},genres[1]
+                    } },
 
-                    new Movie{Title="film 4",Description="açıklama 4",ImageUrl="ahmet1.jpg",GenreId=genres[3].GenreId,Genre=genres[3]},
+                    new Movie{Title="film 4",Description="açıklama 4",ImageUrl="ahmet1.jpg",Genres = new List<Genre>()
+                    {
+                        genres[3], new Genre(){Name="Yeni Tür 4"},genres[4]
+                    } },
 
-                    new Movie{Title="film 5",Description="açıklama 5",ImageUrl="ahmet2.jpg",GenreId=genres[4].GenreId,Genre=genres[4]}
+                    new Movie{Title="film 5",Description="açıklama 5",ImageUrl="ahmet2.jpg",Genres = new List<Genre>()
+                    {
+                        genres[4], new Genre(){Name="Yeni Tür 5"},genres[0]
+                    } },
                 };
             var users = new List<User>()
             {

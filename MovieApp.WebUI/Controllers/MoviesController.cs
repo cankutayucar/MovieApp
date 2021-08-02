@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MovieApp.WebUI.Data;
 using MovieApp.WebUI.Entity;
 using MovieApp.WebUI.Models;
@@ -38,7 +39,7 @@ namespace MovieApp.WebUI.Controllers
 
             if (id != null)
             {
-                movies = movies.Where(i => i.GenreId == id);
+                movies = movies.Include(i => i.Genres).Where(i => i.Genres.Any(i => i.GenreId == id));
             }
 
             if (!string.IsNullOrEmpty(q))
