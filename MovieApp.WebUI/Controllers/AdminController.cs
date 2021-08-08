@@ -92,7 +92,7 @@ namespace MovieApp.WebUI.Controllers
         {
             return View(new AdminGenresViewModel
             {
-                Genres = _context.Genres.Select(i=>new AdminGenreViewModel
+                Genres = _context.Genres.Select(i => new AdminGenreViewModel
                 {
                     GenreId = i.GenreId,
                     Name = i.Name,
@@ -102,7 +102,31 @@ namespace MovieApp.WebUI.Controllers
         }
 
 
-
+        public IActionResult GenreUpdate(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var entity = _context.Genres
+                .Select(i => new AdminGenreEditViewModel
+                {
+                    GenreId = i.GenreId,
+                    Name = i.Name,
+                    Movies = i.Movies.Select(a => new AdminMovieViewModel
+                    {
+                        MovieId = a.MovieId,
+                        Title = a.Title,
+                        ImageUrl = a.ImageUrl
+                    }).ToList()
+                })
+                .FirstOrDefault(i => i.GenreId == id);
+            if (entity == null)
+            {
+                return NotFound();
+            }
+            return View(entity);
+        }
 
 
     }
