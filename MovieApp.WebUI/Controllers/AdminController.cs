@@ -129,5 +129,22 @@ namespace MovieApp.WebUI.Controllers
         }
 
 
+        [HttpPost]
+        public IActionResult GenreUpdate(AdminGenreEditViewModel model, int[] movieIds)
+        {
+            var entity = _context.Genres.Include(i => i.Movies).FirstOrDefault(i => i.GenreId == model.GenreId);
+            if (entity == null)
+            {
+                NotFound();
+            }
+            entity.Name = model.Name;
+            foreach (var id in movieIds)
+            {
+                entity.Movies.Remove(entity.Movies.FirstOrDefault(i => i.MovieId == id));
+            }
+            _context.SaveChanges();
+            return RedirectToAction("GenreList");
+        }
+
     }
 }
